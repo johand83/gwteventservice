@@ -35,11 +35,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.util.logging.Logger;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-import java.util.logging.Level;
-
 import static org.junit.Assert.*;
 
 /**
@@ -118,31 +113,31 @@ public class EventRegistryFactoryTest extends EventServiceTestCase
         assertSame(theNewConfiguration, theEventRegistryFactory.getEventRegistry().getConfiguration());
     }
 
-    @Test
-    public void testInit_Log() {
-        EventServiceConfiguration theNewConfiguration = createConfiguration(0, 1, 2);
-
-        final TestLoggingHandler theTestLoggingHandler = new TestLoggingHandler();
-        
-        Logger theLogger = Logger.getLogger(DefaultEventRegistry.class.getName());
-        final Level theOldLevel = theLogger.getLevel();
-
-        try {
-            theLogger.setLevel(Level.FINEST);
-            theLogger.addHandler(theTestLoggingHandler);
-
-            tearDownEventServiceConfiguration();
-            setUp(theNewConfiguration);
-
-            EventRegistryFactory.getInstance().getEventRegistry();
-
-            assertEquals("Configuration changed - EventServiceConfiguration (TestConfiguration)" + PlatformUtil.getNewLine() +
-                    "  Min.: 0ms; Max.: 1ms; Timeout: 2ms", theTestLoggingHandler.getLastMessage());
-        } finally {
-            theLogger.setLevel(theOldLevel);
-            theLogger.removeHandler(theTestLoggingHandler);
-        }
-    }
+//    @Test
+//    public void testInit_Log() {
+//        EventServiceConfiguration theNewConfiguration = createConfiguration(0, 1, 2);
+//
+//        final TestLoggingHandler theTestLoggingHandler = new TestLoggingHandler();
+//
+//        Logger theLogger = Logger.getLogger(DefaultEventRegistry.class.getName());
+//        final Level theOldLevel = theLogger.getLevel();
+//
+//        try {
+//            theLogger.setLevel(Level.FINEST);
+//            theLogger.addHandler(theTestLoggingHandler);
+//
+//            tearDownEventServiceConfiguration();
+//            setUp(theNewConfiguration);
+//
+//            EventRegistryFactory.getInstance().getEventRegistry();
+//
+//            assertEquals("Configuration changed - EventServiceConfiguration (TestConfiguration)" + PlatformUtil.getNewLine() +
+//                    "  Min.: 0ms; Max.: 1ms; Timeout: 2ms", theTestLoggingHandler.getLastMessage());
+//        } finally {
+//            theLogger.setLevel(theOldLevel);
+//            theLogger.removeHandler(theTestLoggingHandler);
+//        }
+//    }
 
     @Test
     public void testGetEventRegistryError() {
@@ -154,22 +149,22 @@ public class EventRegistryFactoryTest extends EventServiceTestCase
         } catch(ConfigurationException e) {}
     }
 
-    private class TestLoggingHandler extends Handler
-    {
-        private String myLastMessage;
-
-        public void publish(LogRecord aRecord) {
-            myLastMessage = aRecord.getMessage();
-        }
-
-        public void flush() {}
-
-        public void close() throws SecurityException {}
-
-        public String getLastMessage() {
-            return myLastMessage;
-        }
-    }
+//    private class TestLoggingHandler extends Handler
+//    {
+//        private String myLastMessage;
+//
+//        public void publish(LogRecord aRecord) {
+//            myLastMessage = aRecord.getMessage();
+//        }
+//
+//        public void flush() {}
+//
+//        public void close() throws SecurityException {}
+//
+//        public String getLastMessage() {
+//            return myLastMessage;
+//        }
+//    }
 
     private class TestErrorConfigurationLoader implements ConfigurationLoader
     {

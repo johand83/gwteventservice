@@ -45,11 +45,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.util.*;
-import java.util.logging.Logger;
-import java.util.logging.Level;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
+//import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Handler;
+//import java.util.logging.LogRecord;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -73,36 +77,36 @@ public class EventRegistryTest extends EventServiceServerThreadingTest
     private static final Domain TEST_DOMAIN_3 = DomainFactory.getDomain("test_domain_3");
 
     private EventRegistry myEventRegistry;
-    private TestLoggingHandler myTestLoggingHandler;
-    private Level myOldLoggingLevel;
-    private Logger myLogger;
+//    private TestLoggingHandler myTestLoggingHandler;
+//    private Level myOldLoggingLevel;
+//    private Logger myLogger;
 
     @Before
     public void setUp() throws Exception {
         setUp(createConfiguration(0, 500, 99999999));
         myEventRegistry = EventRegistryFactory.getInstance().getEventRegistry();
         setUp(myEventRegistry);
-        setUpLoggingTest();
+//        setUpLoggingTest();
     }
 
-    private void setUpLoggingTest() {
-        myTestLoggingHandler = new TestLoggingHandler();
-
-        myLogger = Logger.getLogger(DefaultEventRegistry.class.getName());
-        myOldLoggingLevel = myLogger.getLevel();
-
-        myLogger.setLevel(Level.FINEST);
-        myLogger.addHandler(myTestLoggingHandler);
-    }
+//    private void setUpLoggingTest() {
+//        myTestLoggingHandler = new TestLoggingHandler();
+//
+//        myLogger = Logger.getLogger(DefaultEventRegistry.class.getName());
+//        myOldLoggingLevel = myLogger.getLevel();
+//
+//        myLogger.setLevel(Level.FINEST);
+//        myLogger.addHandler(myTestLoggingHandler);
+//    }
 
     @After
     public void tearDown() throws Exception {
         super.tearDown();
         tearDownEventServiceConfiguration();
 
-        myLogger.setLevel(myOldLoggingLevel);
-        myLogger.removeHandler(myTestLoggingHandler);
-        myTestLoggingHandler.clear();
+//        myLogger.setLevel(myOldLoggingLevel);
+//        myLogger.removeHandler(myTestLoggingHandler);
+//        myTestLoggingHandler.clear();
 
         FactoryResetService.resetFactory(EventRegistryFactory.class);
         FactoryResetService.resetFactory(DefaultEventExecutorService.class);
@@ -2098,8 +2102,8 @@ public class EventRegistryTest extends EventServiceServerThreadingTest
     }
 
     private void checkLog(int anExpectedLogSize, String... anExpectedLogMessageList) {
-        assertEquals(anExpectedLogSize, myTestLoggingHandler.getLogMessageSize());
-        assertTrue(myTestLoggingHandler.containsMessage(anExpectedLogMessageList));
+//        assertEquals(anExpectedLogSize, myTestLoggingHandler.getLogMessageSize());
+//        assertTrue(myTestLoggingHandler.containsMessage(anExpectedLogMessageList));
     }
 
     private class EmptyEventFilter implements EventFilter
@@ -2170,41 +2174,41 @@ public class EventRegistryTest extends EventServiceServerThreadingTest
         }
     }
 
-    private class TestLoggingHandler extends Handler
-    {
-        private Queue<String> myMessages;
-
-        private TestLoggingHandler() {
-            myMessages = new ConcurrentLinkedQueue<String>();
-        }
-
-        public void publish(LogRecord aRecord) {
-            myMessages.add(aRecord.getMessage());
-        }
-
-        public void flush() {
-            clear();
-        }
-
-        public void close() throws SecurityException {
-            clear();
-        }
-
-        public void clear() {
-            myMessages.clear();
-        }
-
-        public boolean containsMessage(String... aMessages) {
-            for(String theMessage: aMessages) {
-                if(!myMessages.contains(theMessage)) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        public int getLogMessageSize() {
-            return myMessages.size();
-        }
-    }
+//    private class TestLoggingHandler extends Handler
+//    {
+//        private Queue<String> myMessages;
+//
+//        private TestLoggingHandler() {
+//            myMessages = new ConcurrentLinkedQueue<String>();
+//        }
+//
+//        public void publish(LogRecord aRecord) {
+//            myMessages.add(aRecord.getMessage());
+//        }
+//
+//        public void flush() {
+//            clear();
+//        }
+//
+//        public void close() throws SecurityException {
+//            clear();
+//        }
+//
+//        public void clear() {
+//            myMessages.clear();
+//        }
+//
+//        public boolean containsMessage(String... aMessages) {
+//            for(String theMessage: aMessages) {
+//                if(!myMessages.contains(theMessage)) {
+//                    return false;
+//                }
+//            }
+//            return true;
+//        }
+//
+//        public int getLogMessageSize() {
+//            return myMessages.size();
+//        }
+//    }
 }

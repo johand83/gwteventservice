@@ -23,7 +23,7 @@ package de.novanic.eventservice.service.connection.id;
 
 import de.novanic.eventservice.client.config.ConfigurationException;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Random;
 
 /**
@@ -63,9 +63,9 @@ public class SessionExtendedConnectionIdGenerator implements ConnectionIdGenerat
 
     /**
      * Returns the previous generated connection / client id
-     * (see {@link de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(javax.servlet.http.HttpServletRequest)})
+     * (see {@link de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(jakarta.servlet.http.HttpServletRequest)})
      * without generating a new connection / client id.
-     * @see de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(javax.servlet.http.HttpServletRequest)
+     * @see de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(jakarta.servlet.http.HttpServletRequest)
      * @param aRequest request
      * @return the previous generated connection / client id for the specific client
      */

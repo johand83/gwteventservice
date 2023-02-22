@@ -24,7 +24,7 @@ package de.novanic.eventservice.util;
 import de.novanic.eventservice.client.config.ConfigurationException;
 
 import java.net.URL;
-import java.util.logging.LogManager;
+//import java.util.logging.LogManager;
 import java.io.IOException;
 
 /**
@@ -57,7 +57,7 @@ public final class LoggingConfiguratorTestMode
         } else {
             System.clearProperty(LOGGING_FILE_PROPERTY);
         }
-        LogManager.getLogManager().readConfiguration();
+//        LogManager.getLogManager().readConfiguration();
     }
 
     public static void logOff() throws IOException {
@@ -75,7 +75,7 @@ public final class LoggingConfiguratorTestMode
 
     private static void loadConfiguration(String aLoggingProperties) throws IOException {
         System.setProperty(LOGGING_FILE_PROPERTY, aLoggingProperties);
-        LogManager.getLogManager().readConfiguration();
+//        LogManager.getLogManager().readConfiguration();
     }
 
     private static String getConfiguration(String aConfigProperties) {

@@ -26,7 +26,7 @@ import de.novanic.eventservice.config.ConfigParameter;
 import de.novanic.eventservice.service.connection.id.SessionConnectionIdGenerator;
 import de.novanic.eventservice.service.connection.strategy.connector.longpolling.LongPollingServerConnector;
 
-import javax.servlet.ServletConfig;
+import jakarta.servlet.ServletConfig;
 
 import de.novanic.eventservice.config.EventServiceConfiguration;
 import org.junit.Test;

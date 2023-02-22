@@ -32,10 +32,10 @@ import de.novanic.eventservice.client.event.domain.Domain;
 import de.novanic.eventservice.client.event.Event;
 import de.novanic.eventservice.util.PlatformUtil;
 import org.junit.After;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
 
@@ -46,7 +46,7 @@ import static org.junit.Assert.*;
  */
 public abstract class EventServiceServerThreadingTest extends EventServiceTestCase
 {
-    private static final Logger LOG = Logger.getLogger(EventServiceServerThreadingTest.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(EventServiceServerThreadingTest.class.getName());
 
     private EventService myEventService;
     private EventRegistry myEventRegistry;
@@ -76,9 +76,9 @@ public abstract class EventServiceServerThreadingTest extends EventServiceTestCa
         joinThreads();
         joinListenThreads();
 
-        if(LOG.isLoggable(Level.INFO) && myStartTime > 0L) {
+        if(LOG.isInfoEnabled() && myStartTime > 0L) {
             long theExecutionTime = PlatformUtil.getCurrentTime() - myStartTime;
-            LOG.log(Level.INFO, "Execution time: " + theExecutionTime + "ms (" + theExecutionTime / 1000L + " second(s))");
+            LOG.info("Execution time: " + theExecutionTime + "ms (" + theExecutionTime / 1000L + " second(s))");
         }
         myStartTime = 0L;
 

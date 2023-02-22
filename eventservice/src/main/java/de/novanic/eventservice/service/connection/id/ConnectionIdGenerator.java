@@ -21,7 +21,7 @@
  */
 package de.novanic.eventservice.service.connection.id;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * A {@link de.novanic.eventservice.service.connection.id.ConnectionIdGenerator} generates unique ids which are used to
@@ -42,9 +42,9 @@ public interface ConnectionIdGenerator
 
     /**
      * Returns the previous generated connection / client id
-     * (see {@link de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(javax.servlet.http.HttpServletRequest)})
+     * (see {@link de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(jakarta.servlet.http.HttpServletRequest)})
      * without generating a new connection / client id.
-     * @see de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(javax.servlet.http.HttpServletRequest)
+     * @see de.novanic.eventservice.service.connection.id.ConnectionIdGenerator#generateConnectionId(jakarta.servlet.http.HttpServletRequest)
      * @param aRequest request
      * @return the previous generated connection / client id for the specific client
      */

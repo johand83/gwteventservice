@@ -32,7 +32,7 @@ import de.novanic.eventservice.service.registry.user.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -110,7 +110,7 @@ public class StreamingServerConnector extends ConnectionStrategyServerConnectorA
      * directly. The reason for the listen and transfer preparation within one single method is, that the {@link de.novanic.eventservice.service.connection.strategy.connector.ConnectionStrategyServerConnector}
      * should have the control about listening and transfer of the occurred events.
      * The streaming implementation needs a response to stream the events to the clients. That can be prepared with
-     * {@link de.novanic.eventservice.service.connection.strategy.connector.streaming.StreamingServerConnector#prepare(javax.servlet.http.HttpServletResponse)}.
+     * {@link de.novanic.eventservice.service.connection.strategy.connector.streaming.StreamingServerConnector#prepare(jakarta.servlet.http.HttpServletResponse)}.
      * @param aUserInfo {@link de.novanic.eventservice.service.registry.user.UserInfo} which holds new occurred events
      * @return occurred events
      * @throws EventServiceException
@@ -153,7 +153,7 @@ public class StreamingServerConnector extends ConnectionStrategyServerConnectorA
     /**
      * A {@link de.novanic.eventservice.service.connection.strategy.connector.streaming.StreamingServerConnector} has to be
      * cloneable, because it isn't stateless caused by the necessary for a client dependent response
-     * (see {@link de.novanic.eventservice.service.connection.strategy.connector.streaming.StreamingServerConnector#prepare(javax.servlet.http.HttpServletResponse)}).
+     * (see {@link de.novanic.eventservice.service.connection.strategy.connector.streaming.StreamingServerConnector#prepare(jakarta.servlet.http.HttpServletResponse)}).
      * @return the cloned {@link de.novanic.eventservice.service.connection.strategy.connector.streaming.StreamingServerConnector}
      * @throws CloneNotSupportedException
      */

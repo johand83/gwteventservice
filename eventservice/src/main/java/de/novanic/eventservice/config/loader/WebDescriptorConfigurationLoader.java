@@ -21,7 +21,7 @@
  */
 package de.novanic.eventservice.config.loader;
 
-import javax.servlet.ServletConfig;
+import jakarta.servlet.ServletConfig;
 
 /**
  * WebDescriptorConfigurationLoader is used by {@link de.novanic.eventservice.config.EventServiceConfigurationFactory}
@@ -40,7 +40,7 @@ public class WebDescriptorConfigurationLoader extends AbstractConfigurationLoade
 
     /**
      * Creates a {@link de.novanic.eventservice.config.loader.WebDescriptorConfigurationLoader} with a servlet config
-     * ({@link javax.servlet.ServletConfig}).
+     * ({@link jakarta.servlet.ServletConfig}).
      * @param aServletConfig servlet config
      */
     public WebDescriptorConfigurationLoader(ServletConfig aServletConfig) {

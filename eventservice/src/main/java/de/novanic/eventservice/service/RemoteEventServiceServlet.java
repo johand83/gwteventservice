@@ -26,7 +26,7 @@ import de.novanic.eventservice.client.event.domain.Domain;
 import de.novanic.eventservice.client.event.Event;
 import de.novanic.eventservice.client.event.filter.EventFilter;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * RemoteEventServiceServlet is an implementation of {@link de.novanic.eventservice.service.EventExecutorService} as a servlet

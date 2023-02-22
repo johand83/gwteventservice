@@ -1,0 +1,12 @@
+# Ignore IDEA project structure
+.vscode
+.idea
+*.iml
+*.ipr
+*.ids
+*.iws
+out
+*bin
+*target
+*.settings
+atlassian-ide-plugin.xml

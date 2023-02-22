@@ -26,8 +26,8 @@ import de.novanic.eventservice.config.EventServiceConfiguration;
 import de.novanic.eventservice.service.connection.id.ConnectionIdGenerator;
 import de.novanic.eventservice.service.registry.EventRegistryFactory;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * The EventExecutorServiceFactory is used to create the EventExecutorService and to ensure that only one instance of
@@ -67,7 +67,7 @@ public class EventExecutorServiceFactory
      * This method should be used to create an instance of EventExecutorService.
      * The session is needed to generate the client/user id.
      *
-     * @deprecated Please use {@link de.novanic.eventservice.service.EventExecutorServiceFactory#getEventExecutorService(javax.servlet.http.HttpServletRequest)} instead
+     * @deprecated Please use {@link de.novanic.eventservice.service.EventExecutorServiceFactory#getEventExecutorService(jakarta.servlet.http.HttpServletRequest)} instead
      * because a request is necessary instead of a session to support multiple sessions. This method will work like before, but multiple sessions will not be support
      * when it is configured.
      *
@@ -102,7 +102,7 @@ public class EventExecutorServiceFactory
     /**
      * This method should be used to create an instance of EventExecutorService.
      * The EventExecutorService can also be created with a request.
-     * @see EventExecutorServiceFactory#getEventExecutorService(javax.servlet.http.HttpServletRequest)
+     * @see EventExecutorServiceFactory#getEventExecutorService(jakarta.servlet.http.HttpServletRequest)
      * @param aClientId the client/user id
      * @return EventExecutorService
      */
