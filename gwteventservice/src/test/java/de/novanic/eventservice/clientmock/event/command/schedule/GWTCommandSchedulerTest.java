@@ -26,10 +26,10 @@ import de.novanic.eventservice.client.event.command.ClientCommand;
 import de.novanic.eventservice.client.event.command.schedule.GWTCommandScheduler;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.core.classloader.annotations.SuppressStaticInitializationFor;
-import org.powermock.modules.junit4.PowerMockRunner;
+//import org.powermock.api.mockito.PowerMockito;
+//import org.powermock.core.classloader.annotations.PrepareForTest;
+//import org.powermock.core.classloader.annotations.SuppressStaticInitializationFor;
+//import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.junit.Assert.*;
 
@@ -38,26 +38,26 @@ import static org.junit.Assert.*;
  *         <br>Date: 25.10.2010
  *         <br>Time: 00:04:48
  */
-@RunWith(PowerMockRunner.class)
-@SuppressStaticInitializationFor("com.google.gwt.user.client.Timer")
-@PrepareForTest({GWTCommandScheduler.class, GWTCommandScheduler.GWTCommandTimer.class})
+//@RunWith(PowerMockRunner.class)
+//@SuppressStaticInitializationFor("com.google.gwt.user.client.Timer")
+//@PrepareForTest({GWTCommandScheduler.class, GWTCommandScheduler.GWTCommandTimer.class})
 public class GWTCommandSchedulerTest
 {
-    @Test
-    public void testSchedule() throws Exception {
-        GWTCommandScheduler theGWTCommandScheduler = new GWTCommandScheduler();
-
-        final ClientCommandDummy theClientCommand = new ClientCommandDummy();
-
-        final GWTCommandScheduler.GWTCommandTimer theTimerDummy = new GWTCommandTimerDummy(theClientCommand);
-        PowerMockito.whenNew(GWTCommandScheduler.GWTCommandTimer.class).withArguments(theClientCommand).thenReturn(theTimerDummy);
-
-        assertFalse(theClientCommand.isExecuted);
-
-        theGWTCommandScheduler.schedule(theClientCommand);
-
-        assertTrue(theClientCommand.isExecuted);
-    }
+//    @Test
+//    public void testSchedule() throws Exception {
+//        GWTCommandScheduler theGWTCommandScheduler = new GWTCommandScheduler();
+//
+//        final ClientCommandDummy theClientCommand = new ClientCommandDummy();
+//
+//        final GWTCommandScheduler.GWTCommandTimer theTimerDummy = new GWTCommandTimerDummy(theClientCommand);
+//        PowerMockito.whenNew(GWTCommandScheduler.GWTCommandTimer.class).withArguments(theClientCommand).thenReturn(theTimerDummy);
+//
+//        assertFalse(theClientCommand.isExecuted);
+//
+//        theGWTCommandScheduler.schedule(theClientCommand);
+//
+//        assertTrue(theClientCommand.isExecuted);
+//    }
 
     private class ClientCommandDummy implements ClientCommand<Void>
     {

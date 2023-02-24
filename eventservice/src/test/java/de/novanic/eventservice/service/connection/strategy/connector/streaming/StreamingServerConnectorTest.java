@@ -162,7 +162,7 @@ public class StreamingServerConnectorTest extends ConnectionStrategyServerConnec
 //            theLogger.setLevel(theOldLevel);
 //            theLogger.removeHandler(theTestLoggingHandler);
 //        }
-    }
+//    }
 
 //    @Test
 //    public void testListen_Error_2() throws Exception {

@@ -22,6 +22,8 @@
 package de.novanic.eventservice.test.testhelper;
 
 import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.WriteListener;
+
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -100,6 +102,16 @@ public class DummyServletOutputStream extends ServletOutputStream
 
     public void println(double d) throws IOException {
         throw new IOException("Not supported by the dummy \"" + DummyServletOutputStream.class.getName() + "\"!");
+    }
+
+    @Override
+    public boolean isReady() {
+        return false;
+    }
+
+    @Override
+    public void setWriteListener(WriteListener writeListener) {
+
     }
 
     public void write(byte[] b) throws IOException {

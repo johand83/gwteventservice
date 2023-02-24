@@ -13,11 +13,11 @@
 	<dependencies>
 		<!--  GWT dependencies -->
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-servlet</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-user</artifactId>
 		</dependency>
         <!--  GWTEventService module dependencies -->
@@ -39,12 +39,6 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <version>1.7.32</version>
-            <scope>test</scope>
         </dependency>
 	</dependencies>
 </project>

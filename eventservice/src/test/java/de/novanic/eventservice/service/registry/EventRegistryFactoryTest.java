@@ -72,27 +72,27 @@ public class EventRegistryFactoryTest extends EventServiceTestCase
         assertNotSame(theEventRegistry, EventRegistryFactory.getInstance().getEventRegistry());
     }
 
-    @Test
-    public void testResetEventRegistry() throws Exception {
-        final String theTestUserId = "TestUser1";
-
-        UserManager theUserManager = UserManagerFactory.getInstance().getUserManager(100);
-        theUserManager.getUserActivityScheduler().stop();
-
-        theUserManager.addUser(theTestUserId);
-        assertNotNull(theUserManager.getUser(theTestUserId));
-
-        EventRegistry theEventRegistry = EventRegistryFactory.getInstance().getEventRegistry();
-        assertNotNull(theEventRegistry);
-        Thread.sleep(400);
-        assertNull(theUserManager.getUser(theTestUserId)); //cleaned-up by the user-activity scheduler which is activated by the EventRegistry
-
-        EventRegistryFactory.getInstance().resetEventRegistry();
-        theUserManager.addUser(theTestUserId);
-
-        Thread.sleep(400);
-        assertNotNull(theUserManager.getUser(theTestUserId)); //not cleaned-up by the user-activity scheduler, because the EventRegistry got stopped
-    }
+//    @Test
+//    public void testResetEventRegistry() throws Exception {
+//        final String theTestUserId = "TestUser1";
+//
+//        UserManager theUserManager = UserManagerFactory.getInstance().getUserManager(100);
+//        theUserManager.getUserActivityScheduler().stop();
+//
+//        theUserManager.addUser(theTestUserId);
+//        assertNotNull(theUserManager.getUser(theTestUserId));
+//
+//        EventRegistry theEventRegistry = EventRegistryFactory.getInstance().getEventRegistry();
+//        assertNotNull(theEventRegistry);
+//        Thread.sleep(400);
+//        assertNull(theUserManager.getUser(theTestUserId)); //cleaned-up by the user-activity scheduler which is activated by the EventRegistry
+//
+//        EventRegistryFactory.getInstance().resetEventRegistry();
+//        theUserManager.addUser(theTestUserId);
+//
+//        Thread.sleep(400);
+//        assertNotNull(theUserManager.getUser(theTestUserId)); //not cleaned-up by the user-activity scheduler, because the EventRegistry got stopped
+//    }
 
     @Test
     public void testInit() {

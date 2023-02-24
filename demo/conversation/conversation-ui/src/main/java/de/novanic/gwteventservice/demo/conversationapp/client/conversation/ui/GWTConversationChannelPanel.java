@@ -21,13 +21,23 @@
  */
 package de.novanic.gwteventservice.demo.conversationapp.client.conversation.ui;
 
-import com.google.gwt.user.client.ui.*;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.event.logical.shared.SelectionEvent;
+import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Tree;
+import com.google.gwt.user.client.ui.TreeItem;
+import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * @author sstrohschein
@@ -70,7 +80,9 @@ public class GWTConversationChannelPanel extends VerticalPanel implements Conver
                 return false;
             }
         }
-        myChannelTree.addItem(aChannel);
+        TreeItem item = new TreeItem();
+        item.setText(aChannel);
+        myChannelTree.addItem(item);
         return true;
     }
     
@@ -98,7 +110,7 @@ public class GWTConversationChannelPanel extends VerticalPanel implements Conver
                 if(aChannel.equals(theChannelTreeItem.getText())) {
                     if(!containsContact(theChannelTreeItem, aContactName)) {
                         //adds the contact if the contact doesn't already exists in that channel
-                        theChannelTreeItem.addItem(aContactName);
+                        theChannelTreeItem.addTextItem(aContactName);
                         isContactAdded = true;
                     }
                 }

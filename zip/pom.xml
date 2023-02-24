@@ -9,6 +9,22 @@
 	<artifactId>zip</artifactId>
 	<packaging>pom</packaging>
 	<name>${project.artifactId}</name>
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>qmaticartifactory</id>
+			<name>qmaticartifactory</name>
+			<url>https://artifactory-dev.qmatic-ci.io/artifactory/qmatic-maven</url>
+		</repository>
+	</repositories>
 	<dependencies>
         <!-- GWTEventService libraries / dependencies -->
         <!-- GWTEventService - EventService-RPC (rpc / communication module) -->
@@ -23,12 +39,12 @@
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
-		<dependency>
-			<groupId>de.novanic.gwteventservice</groupId>
-			<artifactId>eventservice-rpc</artifactId>
-			<version>${project.version}</version>
-			<classifier>javadoc</classifier>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>de.novanic.gwteventservice</groupId>-->
+<!--			<artifactId>eventservice-rpc</artifactId>-->
+<!--			<version>${project.version}</version>-->
+<!--			<classifier>javadoc</classifier>-->
+<!--		</dependency>-->
 		<!-- GWTEventService - EventService (server-side module) -->
 		<dependency>
 			<groupId>de.novanic.gwteventservice</groupId>
@@ -41,12 +57,12 @@
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
-		<dependency>
-			<groupId>de.novanic.gwteventservice</groupId>
-			<artifactId>eventservice</artifactId>
-			<version>${project.version}</version>
-			<classifier>javadoc</classifier>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>de.novanic.gwteventservice</groupId>-->
+<!--			<artifactId>eventservice</artifactId>-->
+<!--			<version>${project.version}</version>-->
+<!--			<classifier>javadoc</classifier>-->
+<!--		</dependency>-->
 		<!-- GWTEventService - GWTEventService (GWT module) -->
 		<dependency>
 			<groupId>de.novanic.gwteventservice</groupId>
@@ -59,12 +75,12 @@
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
-		<dependency>
-			<groupId>de.novanic.gwteventservice</groupId>
-			<artifactId>gwteventservice</artifactId>
-			<version>${project.version}</version>
-			<classifier>javadoc</classifier>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>de.novanic.gwteventservice</groupId>-->
+<!--			<artifactId>gwteventservice</artifactId>-->
+<!--			<version>${project.version}</version>-->
+<!--			<classifier>javadoc</classifier>-->
+<!--		</dependency>-->
 	</dependencies>
     <build>
         <plugins>

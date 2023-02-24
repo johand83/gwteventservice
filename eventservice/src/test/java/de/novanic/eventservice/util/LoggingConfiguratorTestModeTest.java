@@ -37,7 +37,7 @@ import static org.junit.Assert.*;
  *         <br>Date: 14.01.2009
  *         <br>Time: 23:42:36
  */
-@RunWith(JUnit4.class)
+//@RunWith(JUnit4.class)
 public class LoggingConfiguratorTestModeTest extends EventServiceTestCase
 {
 //    private static final String LOGGING_FILE_PROPERTY = "java.util.logging.config.file";

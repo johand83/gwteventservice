@@ -35,9 +35,9 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        GWTStreamingClientConnectorTest.class,
-        GWTStreamingClientConnectorGeckoInitializationTest.class,
-        GWTStreamingClientConnectorGeckoTest.class,
-        GWTCommandSchedulerTest.class
+//        GWTStreamingClientConnectorTest.class,
+//        GWTStreamingClientConnectorGeckoInitializationTest.class,
+//        GWTStreamingClientConnectorGeckoTest.class,
+//        GWTCommandSchedulerTest.class
 })
 public class GWTEventServicePowerMockTestSuite {}

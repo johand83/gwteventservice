@@ -10,3 +10,6 @@ out
 *target
 *.settings
 atlassian-ide-plugin.xml
+
+war
+gwt-unitCache
