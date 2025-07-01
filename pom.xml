@@ -25,7 +25,7 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>qmaticartifactory</id>
+			<id>private-repo</id>
 			<name>qmaticartifactory</name>
 			<url>https://artifactory-dev.qmatic-ci.io/artifactory/qmatic-maven</url>
 		</repository>
@@ -37,7 +37,7 @@
 		</license>
 	</licenses>
 	<properties>
-		<gwt.version>2.10.0-EE10</gwt.version>
+		<gwt.version>2.12.2</gwt.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 <!--		<stagingSiteURL>file://${settings.localRepository}/../site-stage/gwteventservice</stagingSiteURL>-->
@@ -48,17 +48,23 @@
 	</issueManagement>
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>jakarta.servlet</groupId>
+				<artifactId>jakarta.servlet-api</artifactId>
+				<version>6.0.0</version>
+				<scope>provided</scope>
+			</dependency>
 			<!--  GWT dependencies -->
 			<dependency>
 				<groupId>org.gwtproject</groupId>
-				<artifactId>gwt-servlet</artifactId>
+				<artifactId>gwt-servlet-jakarta</artifactId>
 				<version>${gwt.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.gwtproject</groupId>
+				<groupId>com.google.gwt</groupId>
 				<artifactId>gwt-user</artifactId>
-				<version>${gwt.version}</version>
+				<version>2.12.2-EE10</version>
 				<scope>provided</scope>
 			</dependency>
             <!-- GWTEventService module dependencies -->
